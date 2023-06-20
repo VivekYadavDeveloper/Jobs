@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
-import 'package:inductus_jobs/services/paymentServices/payment_services.dart';
+import 'package:inductus_jobs/view/loginScreen/login.screen.dart';
 import 'app/constant.dart';
+import 'services/payment/payment_services.dart';
+import 'view/paymentScreen/payment.screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,58 +19,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'InductusJob',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const StripeScreen(title: 'Pay Your Bills'),
-    );
-  }
-}
-
-class StripeScreen extends StatefulWidget {
-  const StripeScreen({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<StripeScreen> createState() => _StripeScreenState();
-}
-
-class _StripeScreenState extends State<StripeScreen> {
-  //** To Store The Payment Intent Details After Making Payment ;
-  Map<String, dynamic>? paymentIntent;
-
-  // void _incrementCounter() {
-  //   setState(() {
-  //     _counter++;
-  //   });
-  // }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Press The Button To Make Payment',
+    return ScreenUtilInit(
+        designSize: const Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
+          return MaterialApp(
+            title: 'InductusJob',
+            theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              useMaterial3: true,
             ),
-            ElevatedButton(
-                onPressed: () {
-                  PaymentServices.payment(10);
-                },
-                child: const Text("Pay Your Bill"))
-          ],
-        ),
-      ),
-    );
+            home:  LoginScreen(),
+          );
+        });
   }
 }
