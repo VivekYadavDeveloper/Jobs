@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:inductus_jobs/view/loginScreen/login.screen.dart';
+import 'package:inductus_jobs/view/registrationScreen/resgistration.screen.dart';
 import 'app/constant.dart';
-import 'services/payment/payment_services.dart';
-import 'view/paymentScreen/payment.screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,12 +24,12 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return MaterialApp(
-            title: 'InductusJob',
+            title: 'Inductus Job',
             theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home:  LoginScreen(),
+            home: RegistrationScreen(),
           );
         });
   }
