@@ -57,6 +57,7 @@ class LoginScreen extends StatelessWidget {
                                   val!.isEmpty ? 'Enter a password' : null,
                             ),
                           ),
+                          ElevatedButton(onPressed: (){}, child: const Text("Login"))
                         ],
                       ))
                 ],
