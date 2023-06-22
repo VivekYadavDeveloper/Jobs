@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:inductus_jobs/view/Widgets/custom.back.btn.dart';
-import 'package:inductus_jobs/view/registrationScreen/widgets/welcome.text.resgistration.widget.dart';
 
+import '../Widgets/custom.back.btn.dart';
 import '../Widgets/custom.textfield.widget.dart';
+import 'widgets/welcome.text.resgistration.widget.dart';
 
 class RegistrationScreen extends StatefulWidget {
-  RegistrationScreen({super.key});
+  const RegistrationScreen({super.key});
 
   @override
   State<RegistrationScreen> createState() => _RegistrationScreenState();
