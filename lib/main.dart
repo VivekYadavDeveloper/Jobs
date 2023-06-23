@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:inductus_jobs/view/forgotPasswordScreen/forgot.password.screen.dart';
 import 'package:inductus_jobs/view/loginScreen/login.screen.dart';
+import 'package:inductus_jobs/view/otpVerificationScreen/otp.verification.screen.dart';
 import 'package:inductus_jobs/view/registrationScreen/resgistration.screen.dart';
 import 'app/constant.dart';
+import 'view/homeScreen/homeScreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: ForgotPasswordScreen(),
+            home: const HomeScreen(),
           );
         });
   }

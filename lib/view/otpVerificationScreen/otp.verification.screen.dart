@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:otp_text_field/otp_field.dart';
+import 'package:otp_text_field/otp_field_style.dart';
+import 'package:otp_text_field/style.dart';
 
-import 'package:inductus_jobs/view/otpVerificationScreen/widget/otp.vericfication.widget.dart';
-import 'package:pinput/pinput.dart';
+import 'widget/otp.vericfication.widget.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
   const OtpVerificationScreen({Key? key}) : super(key: key);
@@ -11,7 +14,7 @@ class OtpVerificationScreen extends StatefulWidget {
 }
 
 class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
-  TextEditingController otpController = TextEditingController();
+  OtpFieldController otpController = OtpFieldController();
   final _formKey = GlobalKey<FormState>();
   var otp = "";
 
@@ -31,19 +34,29 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
+          SizedBox(height: 25.h),
           otpVerificationTextWidget(),
+          SizedBox(height: 45.h),
           Form(
             key: _formKey,
-            child: Pinput(
+            child: OTPTextField(
               controller: otpController,
               length: 4,
-              // width: MediaQuery.of(context).size.width / 1.5,
-              // textFieldAlignment: MainAxisAlignment.spaceAround,
-              // fieldWidth: 45,
-              // fieldStyle: FieldStyle.underline,
-              // outlineBorderRadius: 20,
-              // style: TextStyle(fontSize: 17.sp),
+              otpFieldStyle: OtpFieldStyle(
+                  backgroundColor: Colors.transparent,
+                  borderColor: Colors.black,
+                  enabledBorderColor: Colors.black),
+              width: MediaQuery.of(context).size.width / 1.5,
+              textFieldAlignment: MainAxisAlignment.spaceAround,
+              spaceBetween: 10,
+              fieldWidth: 50.w,
+              fieldStyle: FieldStyle.box,
+              outlineBorderRadius: 15.r,
+              style:
+                  TextStyle(fontSize: 17.sp, color: Colors.blueGrey.shade700),
               onChanged: (pin) {
                 otp = pin;
               },
@@ -52,22 +65,9 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
               },
             ),
           ),
-          MaterialButton(
-            height: MediaQuery.of(context).size.height * 0.05,
-            minWidth: MediaQuery.of(context).size.width * 0.8,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-            onPressed: () async {},
-            color: Colors.purpleAccent,
-            child: const Text(
-              'SUBMIT',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 17,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
+          SizedBox(height: 25.h),
+          Center(
+            child: ElevatedButton(onPressed: (){}, child: const Text("SUBMIT"))
           ),
         ],
       ),
