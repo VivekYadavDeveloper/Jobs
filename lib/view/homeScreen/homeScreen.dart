@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:inductus_jobs/app/app.color.constant.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,26 +10,34 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      backgroundColor: AppColors.primaryColor,
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.primaryColor,
+        iconTheme: IconThemeData(color: AppColors.whiteColor),
         actions: <Widget>[
           IconButton(
             onPressed: () {
               showSearch(context: context, delegate: CustomSearchBar());
               print("Hello Search");
             },
-            icon: const FaIcon(FontAwesomeIcons.magnifyingGlass),
+            icon: FaIcon(
+              FontAwesomeIcons.magnifyingGlass,
+              color: AppColors.whiteColor,
+            ),
           ),
           IconButton(
             onPressed: () {},
-            icon: const FaIcon(FontAwesomeIcons.bell),
+            icon: FaIcon(
+              FontAwesomeIcons.bell,
+              color: AppColors.whiteColor,
+            ),
           )
         ],
       ),
       resizeToAvoidBottomInset: false,
       drawer: Drawer(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: AppColors.primaryColor,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 topRight: Radius.circular(20),
@@ -61,12 +71,72 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: LayoutBuilder(builder: (context, BoxConstraints constraints) {
-        return const Column(
+        return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-
-            
+            Expanded(
+              child: ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      color: AppColors.cardColor,
+                      child: ListTile(
+                        title: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(
+                              "Flutter Developer",
+                              style: GoogleFonts.aBeeZee(
+                                  textStyle:
+                                      TextStyle(color: AppColors.whiteColor)),
+                            ),
+                            Text(
+                              "Rs 3 - 4LPA",
+                              style: GoogleFonts.aBeeZee(
+                                  textStyle:
+                                      TextStyle(color: AppColors.whiteColor)),
+                            )
+                          ],
+                        ),
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text(
+                                  "1-2 Years",
+                                  style: GoogleFonts.aBeeZee(
+                                      textStyle: TextStyle(
+                                          color: AppColors.whiteColor)),
+                                ),
+                                Text(
+                                  "Graduation/Diploma",
+                                  style: GoogleFonts.aBeeZee(
+                                      textStyle: TextStyle(
+                                          color: AppColors.whiteColor)),
+                                ),
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: FaIcon(
+                                      FontAwesomeIcons.star,
+                                      color: AppColors.whiteColor,
+                                    ))
+                              ],
+                            ),
+                            Text(
+                              "Inductus Limited",
+                              style: GoogleFonts.aBeeZee(
+                                  textStyle:
+                                      TextStyle(color: AppColors.whiteColor)),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
+            )
           ],
         );
       }),

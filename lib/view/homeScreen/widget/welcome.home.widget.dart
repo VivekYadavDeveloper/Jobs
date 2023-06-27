@@ -1,8 +1,9 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-Widget welcomeHomeTextWidget() {
-  return Column(
+Widget homeScreenCustomWidget(String title, Function(String)) {
+  return const Column(
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[],
   );
 }
