@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:inductus_jobs/app/app.color.constant.dart';
 import 'package:inductus_jobs/view/Widgets/custom.textfield.widget.dart';
 import 'package:inductus_jobs/view/loginScreen/Widgets/login.screen.widget.dart';
 
@@ -14,7 +16,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.primaryColor,
       resizeToAvoidBottomInset: false,
       body: LayoutBuilder(builder: (context, BoxConstraints constraints) {
         return Column(
@@ -38,7 +40,7 @@ class LoginScreen extends StatelessWidget {
                             child: CustomTextField.customTextField(
                               textEditingController: emailController,
                               textInputType: TextInputType.text,
-                              hintText: "Email",
+                              helperText: "Email",
                               validator: (val) =>
                                   !RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
                                           .hasMatch(val!)
@@ -46,18 +48,37 @@ class LoginScreen extends StatelessWidget {
                                       : null,
                             ),
                           ),
+                          SizedBox(height: 10.h),
                           Padding(
                             padding:
                                 const EdgeInsets.fromLTRB(35.0, 0.0, 35.0, 2.0),
                             child: CustomTextField.customTextField(
                               textEditingController: passwordController,
                               textInputType: TextInputType.text,
-                              hintText: "Password",
+                              helperText: "Password",
                               validator: (val) =>
                                   val!.isEmpty ? 'Enter a password' : null,
                             ),
                           ),
-                          ElevatedButton(onPressed: (){}, child: const Text("Login"))
+                          SizedBox(height: 10.h),
+                          SizedBox(
+                            height: 40.h,
+                            width: 150.w,
+                            child: ElevatedButton(
+                                style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            AppColors.activeColor)),
+                                onPressed: () {},
+                                child: Text(
+                                  "LOGIN",
+                                  style: GoogleFonts.roboto(
+                                      textStyle: TextStyle(
+                                          fontSize: 15.sp,
+                                          color: AppColors.whiteColor,
+                                          fontWeight: FontWeight.bold)),
+                                )),
+                          )
                         ],
                       ))
                 ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:inductus_jobs/app/app.color.constant.dart';
 import 'package:inductus_jobs/view/Widgets/custom.textfield.widget.dart';
 import 'package:inductus_jobs/view/forgotPasswordScreen/widget/forgot.password.widget.dart';
 
@@ -16,6 +17,7 @@ class ForgotPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      backgroundColor: AppColors.primaryColor,
       resizeToAvoidBottomInset: false,
       body: LayoutBuilder(builder: (context, BoxConstraints constraints) {
         return Column(
@@ -39,7 +41,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                         child: CustomTextField.customTextField(
                           textEditingController: userForgotPassEmailController,
                           textInputType: TextInputType.emailAddress,
-                          hintText: "Enter Email",
+                          helperText: "Enter Email",
                           validator: (val) =>
                               !RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
                                       .hasMatch(val!)
@@ -47,16 +49,23 @@ class ForgotPasswordScreen extends StatelessWidget {
                                   : null,
                         ),
                       ),
-                      SizedBox(width: 10.w),
+                      SizedBox(width: 20.h),
                       SizedBox(
-                        height: 30.h,
+                        height: 40.h,
                         width: 150.w,
                         child: ElevatedButton(
+                            style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        AppColors.activeColor)),
                             onPressed: () {},
                             child: Text(
-                              "OTP Send",
+                              "SUBMIT",
                               style: GoogleFonts.roboto(
-                                  textStyle: TextStyle(fontSize: 15.sp)),
+                                  textStyle: TextStyle(
+                                      fontSize: 15.sp,
+                                      color: AppColors.whiteColor,
+                                      fontWeight: FontWeight.bold)),
                             )),
                       )
                     ],

@@ -1,40 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:inductus_jobs/app/app.color.constant.dart';
 
 class CustomTextField {
   static customTextField({
     required TextEditingController textEditingController,
     required TextInputType textInputType,
-    required String hintText,
+    required String helperText,
     int? maxLength,
     String? Function(String?)? validator,
     Function(String)? onChange,
   }) {
     return TextFormField(
       keyboardType: textInputType,
-      style: const TextStyle(color: Colors.black),
+      style: TextStyle(color: AppColors.whiteColor),
       onChanged: onChange,
       controller: textEditingController,
       validator: validator,
       decoration: InputDecoration(
-        fillColor: Colors.white,
+        focusColor: AppColors.textFieldFillColor,
+        hoverColor: AppColors.textFieldFillColor,
+        fillColor: AppColors.textFieldFillColor,
         filled: true,
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 30,
           vertical: 20,
         ),
-        helperText: hintText,
-        hintStyle: TextStyle(
-          color: Colors.lightBlue.shade400,
-        ),
+        helperText: helperText,
+        helperStyle: TextStyle(color: AppColors.whiteColor),
         enabledBorder: OutlineInputBorder(
           borderRadius: const BorderRadius.all(
             Radius.circular(12),
           ),
-          borderSide: BorderSide(color: Colors.blueAccent.shade400, width: 1.5),
+          borderSide: BorderSide(color: AppColors.activeColor, width: 1.5),
         ),
         focusedBorder: OutlineInputBorder(
             borderRadius: const BorderRadius.all(Radius.circular(8)),
-            borderSide: BorderSide(color: Colors.purpleAccent.shade200)),
+            borderSide: BorderSide(color: AppColors.activeColor)),
       ),
     );
   }

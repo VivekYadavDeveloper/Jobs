@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:inductus_jobs/app/app.color.constant.dart';
 
 Widget welcomeTextLogin() {
   return Column(
@@ -29,7 +30,7 @@ Widget welcomeTextLogin() {
         textAlign: TextAlign.center,
         style: GoogleFonts.roboto(
             textStyle: TextStyle(
-                color: Colors.black,
+                color: AppColors.whiteColor,
                 fontSize: 25.sp,
                 fontWeight: FontWeight.bold)),
       )

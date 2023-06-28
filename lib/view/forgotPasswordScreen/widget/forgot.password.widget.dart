@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:inductus_jobs/app/app.color.constant.dart';
 import 'package:inductus_jobs/view/Widgets/custom.back.btn.dart';
 
 Widget forgotPasswordTextWidget() {
@@ -14,7 +15,7 @@ Widget forgotPasswordTextWidget() {
           text: TextSpan(
             text: 'Hey Forgot Your Password ! 😲 ',
             style: TextStyle(
-              color: Colors.black,
+              color: AppColors.whiteColor,
               fontWeight: FontWeight.w900,
               fontSize: 35.0.sp,
             ),
@@ -27,7 +28,7 @@ Widget forgotPasswordTextWidget() {
           text: TextSpan(
             text: 'Enter Your Register Email To Receive The OTP',
             style: TextStyle(
-              color: Colors.blue,
+              color: AppColors.activeColor,
               fontWeight: FontWeight.w400,
               fontSize: 25.0.sp,
             ),

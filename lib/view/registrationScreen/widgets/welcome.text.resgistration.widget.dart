@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:inductus_jobs/app/app.color.constant.dart';
 
 Widget welcomeTextRegistration() {
   return Column(
@@ -14,7 +15,7 @@ Widget welcomeTextRegistration() {
           style: GoogleFonts.roboto(
               textStyle: TextStyle(
             fontSize: 25.sp,
-            color: Colors.black,
+            color: AppColors.whiteColor,
             fontWeight: FontWeight.bold,
           )),
         ),

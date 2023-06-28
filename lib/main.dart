@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:inductus_jobs/app/app.color.constant.dart';
+import 'package:inductus_jobs/view/bottomNavigationBar/bottom.navigationbar.dart';
 import 'package:inductus_jobs/view/forgotPasswordScreen/forgot.password.screen.dart';
 import 'package:inductus_jobs/view/loginScreen/login.screen.dart';
 import 'package:inductus_jobs/view/otpVerificationScreen/otp.verification.screen.dart';
@@ -29,10 +31,11 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Inductus Job',
             theme: ThemeData(
+              primaryColor: AppColors.primaryColor,
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: const HomeScreen(),
+            home: NavigationBarScreen(),
           );
         });
   }
