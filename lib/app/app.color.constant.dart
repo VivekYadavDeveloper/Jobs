@@ -7,4 +7,5 @@ class AppColors {
   static Color activeColor = const Color(0xFF00BAAE);
   static Color navigationBarColor = const Color(0xFF003834);
   static Color textFieldFillColor = const Color(0xFF012A28);
+  static Color fieldColor = const Color(0xFF203131);
 }
