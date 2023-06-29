@@ -33,9 +33,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       backgroundColor: AppColors.primaryColor,
       body: LayoutBuilder(builder: (context, BoxConstraints constraints) {
-        return Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: SingleChildScrollView(
+        return SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               children: <Widget>[
                 Row(
