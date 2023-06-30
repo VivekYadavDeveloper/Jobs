@@ -56,6 +56,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         icon: const FaIcon(FontAwesomeIcons.plus),
                       ),
                     ),
+
+                    //**** Name Section
                     SizedBox(width: MediaQuery.of(context).size.width / 15.w),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -66,6 +68,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           style: GoogleFonts.roboto(
                             textStyle: TextStyle(
                               fontSize: 20.sp,
+                              fontWeight: FontWeight.bold,
                               color: AppColors.whiteColor,
                             ),
                           ),
@@ -88,6 +91,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ),
                         ),
+                        //**** Update Profile Section
                         ElevatedButton(
                           onPressed: () {},
                           style: ButtonStyle(
@@ -121,6 +125,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
+                // **** Upload the Resume
                 SizedBox(height: MediaQuery.of(context).size.height / 25.h),
                 Container(
                   height: MediaQuery.of(context).size.height / 12.5.h,
@@ -140,8 +145,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Text(
                           "Upload CV",
                           style: GoogleFonts.roboto(
-                              textStyle:
-                                  TextStyle(color: AppColors.whiteColor)),
+                              textStyle: TextStyle(
+                            color: AppColors.whiteColor,
+                            fontSize: 15.sp,
+                          )),
                         ),
                         IconButton(
                           onPressed: () {},
@@ -152,6 +159,52 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ],
                     ),
+                  ),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height / 35.h),
+                //  **** About Me Section
+                SizedBox(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        "About Me",
+                        style: GoogleFonts.roboto(
+                            textStyle: TextStyle(
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.whiteColor)),
+                      ),
+                    ],
+                  ),
+                ),
+                Card(
+                  color: AppColors.primaryColor,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Hello I'm Flutter Developer Hehe Hehe hehe hehe hehe heheh heheh hehe eheehe ehehehe he heh ehe he ehe ehe heh",
+                      style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                              fontSize: 16.sp, color: AppColors.whiteColor)),
+                    ),
+                  ),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height / 35.h),
+                //  **** About Me Section
+                SizedBox(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        "Skills",
+                        style: GoogleFonts.roboto(
+                            textStyle: TextStyle(
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.whiteColor)),
+                      ),
+                    ],
                   ),
                 ),
               ],
