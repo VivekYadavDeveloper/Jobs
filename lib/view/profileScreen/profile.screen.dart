@@ -11,6 +11,8 @@ class ProfileScreen extends StatefulWidget {
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
+bool _isSelectedChips = false;
+
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    // **** Profile Image Section //
+                    // **** Profile Image Section **** //
                     Container(
                       height: MediaQuery.of(context).size.height / 5.5.h,
                       width: MediaQuery.of(context).size.width / 3.3.w,
@@ -57,7 +59,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
 
-                    //**** Name Section
+                    //**** Name Section ****///
                     SizedBox(width: MediaQuery.of(context).size.width / 15.w),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -91,7 +93,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ),
                         ),
-                        //**** Update Profile Section
+                        //**** Update Profile Section ****//
                         ElevatedButton(
                           onPressed: () {},
                           style: ButtonStyle(
@@ -125,7 +127,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
-                // **** Upload the Resume
+                // **** Upload the Resume ****//
                 SizedBox(height: MediaQuery.of(context).size.height / 25.h),
                 Container(
                   height: MediaQuery.of(context).size.height / 12.5.h,
@@ -162,7 +164,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height / 35.h),
-                //  **** About Me Section
+                //  **** About Me Section ****//
                 SizedBox(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -207,6 +209,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
+                // ListView.builder(
+                //     itemCount: 5,
+                //     itemBuilder: (context, index) {
+                //       return Row(
+                //         crossAxisAlignment: CrossAxisAlignment.start,
+                //         children: <Widget>[
+                //           ChoiceChip(
+                //             label: const Text("Flutter Developer"),
+                //             selected: _isSelectedChips,
+                //           ),
+                //         ],
+                //       );
+                //     }),
               ],
             ),
           ),
