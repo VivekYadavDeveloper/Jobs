@@ -209,19 +209,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                // ListView.builder(
-                //     itemCount: 5,
-                //     itemBuilder: (context, index) {
-                //       return Row(
-                //         crossAxisAlignment: CrossAxisAlignment.start,
-                //         children: <Widget>[
-                //           ChoiceChip(
-                //             label: const Text("Flutter Developer"),
-                //             selected: _isSelectedChips,
-                //           ),
-                //         ],
-                //       );
-                //     }),
+                // Expanded(
+                //   child: ListView.builder(
+                //       itemCount: 5,
+                //       itemBuilder: (context, index) {
+                //         return ChoiceChip(
+                //           label: const Text("Flutter Developer"),
+                //           selected: _isSelectedChips,
+                //         );
+                //       }),
+                // ),
               ],
             ),
           ),
