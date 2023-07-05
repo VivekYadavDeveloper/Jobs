@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
+import 'package:inductus_jobs/view/editUserProfile/edit.user.profile.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -26,7 +27,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               FontAwesomeIcons.arrowLeft,
               color: AppColors.activeColor,
             )),
-        backgroundColor: AppColors.primaryColor,
         title: Text(
           "Profile",
           style: GoogleFonts.roboto(
@@ -95,7 +95,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         //**** Update Profile Section ****//
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const EditUserProfileScreen()));
+                          },
                           style: ButtonStyle(
                               shape: MaterialStateProperty.all<
                                       RoundedRectangleBorder>(

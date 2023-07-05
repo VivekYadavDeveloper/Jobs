@@ -17,6 +17,7 @@ class CustomTextField {
       controller: textEditingController,
       validator: validator,
       decoration: InputDecoration(
+        helperText: helperText,
         focusColor: AppColors.textFieldFillColor,
         hoverColor: AppColors.textFieldFillColor,
         fillColor: AppColors.textFieldFillColor,
@@ -25,7 +26,6 @@ class CustomTextField {
           horizontal: 30,
           vertical: 20,
         ),
-        helperText: helperText,
         helperStyle: TextStyle(color: AppColors.whiteColor),
         enabledBorder: OutlineInputBorder(
           borderRadius: const BorderRadius.all(

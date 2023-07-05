@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
 import 'package:inductus_jobs/view/bottomNavigationBar/bottom.navigationbar.dart';
 import 'package:inductus_jobs/view/forgotPasswordScreen/forgot.password.screen.dart';
@@ -32,8 +33,12 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Inductus Job',
             theme: ThemeData(
+              appBarTheme: AppBarTheme(
+                  backgroundColor: AppColors.primaryColor,
+                  iconTheme: IconThemeData(color: AppColors.activeColor)),
               primaryColor: AppColors.primaryColor,
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              fontFamily: GoogleFonts.poppins().fontFamily,
               useMaterial3: true,
             ),
             home: NavigationBarScreen(),
