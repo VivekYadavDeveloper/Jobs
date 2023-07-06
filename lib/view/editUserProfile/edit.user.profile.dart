@@ -62,18 +62,18 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                 controlsBuilder: (BuildContext context, _) {
                   return Row(
                     children: <Widget>[
-                      TextButton(
+                      ElevatedButton(
                         onPressed: continued,
-                        child: const Text(
+                        child: Text(
                           'NEXT',
-                          style: TextStyle(color: Colors.blue),
+                          style: TextStyle(color: AppColors.whiteColor),
                         ),
                       ),
                       TextButton(
                         onPressed: cancel,
-                        child: const Text(
+                        child: Text(
                           'EXIT',
-                          style: TextStyle(color: Colors.blue),
+                          style: TextStyle(color: AppColors.whiteColor),
                         ),
                       ),
                     ],
@@ -101,21 +101,29 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                           textEditingController: userName,
                           textInputType: TextInputType.name,
                         ),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height / 25),
                         CustomTextField.customTextField(
                           helperText: "Gender",
                           textEditingController: selectUserGender,
                           textInputType: TextInputType.name,
                         ),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height / 25),
                         CustomTextField.customTextField(
                           helperText: "DOB",
                           textEditingController: dateOfBirth,
                           textInputType: TextInputType.datetime,
                         ),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height / 25),
                         CustomTextField.customTextField(
                           helperText: "Location",
                           textEditingController: locationSelection,
                           textInputType: TextInputType.name,
                         ),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height / 25),
                       ],
                     ),
                     isActive: _currentIndex >= 0,
@@ -137,6 +145,7 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                             helperText: "Bio (Max 500 Word)"),
                       ],
                     ),
+
                     isActive: _currentIndex >= 0,
                     state: _currentIndex >= 2
                         ? StepState.complete
