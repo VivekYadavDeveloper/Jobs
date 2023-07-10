@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
 
 class CustomTextField {
@@ -18,6 +19,7 @@ class CustomTextField {
       validator: validator,
       decoration: InputDecoration(
         helperText: helperText,
+
         focusColor: AppColors.textFieldFillColor,
         hoverColor: AppColors.textFieldFillColor,
         fillColor: AppColors.textFieldFillColor,
@@ -26,7 +28,7 @@ class CustomTextField {
           horizontal: 30,
           vertical: 20,
         ),
-        helperStyle: TextStyle(color: AppColors.whiteColor),
+        helperStyle: TextStyle(color: AppColors.whiteColor,fontSize: 15.sp),
         enabledBorder: OutlineInputBorder(
           borderRadius: const BorderRadius.all(
             Radius.circular(12),
