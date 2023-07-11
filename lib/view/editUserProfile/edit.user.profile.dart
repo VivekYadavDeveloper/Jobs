@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/view/Widgets/custom.textfield.widget.dart';
 
@@ -26,6 +25,7 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
   final TextEditingController toController = TextEditingController();
   int _currentIndex = 0;
   StepperType stepperType = StepperType.horizontal;
+  final _stepperController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +89,6 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                 currentStep: _currentIndex,
                 onStepContinue: continued,
                 onStepCancel: cancel,
-                physics: const ScrollPhysics(),
                 steps: <Step>[
                   //**** Basic Information
                   Step(
@@ -220,6 +219,32 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                         ? StepState.complete
                         : StepState.disabled,
                   ),
+                  //  **** Key Skills And Language
+                  Step(
+                    title: Text(
+                      "Skill",
+                      style: TextStyle(color: AppColors.whiteColor),
+                    ),
+                    content: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Skill And Language",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                              fontSize: 25.sp, color: AppColors.whiteColor),
+                        ),
+                        CustomTextField.customTextField(
+                            textEditingController: userBio,
+                            textInputType: TextInputType.text,
+                            helperText: "Skills"),
+                      ],
+                    ),
+                    isActive: _currentIndex >= 0,
+                    state: _currentIndex >= 4
+                        ? StepState.complete
+                        : StepState.disabled,
+                  ),
                 ],
               ),
             ),
@@ -242,7 +267,7 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
   }
 
   continued() {
-    _currentIndex < 2 ? setState(() => _currentIndex += 1) : null;
+    _currentIndex < 3 ? setState(() => _currentIndex += 1) : null;
   }
 
   cancel() {
