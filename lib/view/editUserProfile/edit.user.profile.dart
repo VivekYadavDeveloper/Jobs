@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/view/Widgets/custom.textfield.widget.dart';
-
 import '../../app/app.color.constant.dart';
 
 class EditUserProfileScreen extends StatefulWidget {
@@ -56,6 +55,7 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
           child: Form(
             child: Theme(
               data: ThemeData(
+                useMaterial3: true,
                 canvasColor: AppColors.primaryColor,
                 colorScheme: Theme.of(context).colorScheme.copyWith(
                       primary: AppColors.activeColor,
@@ -69,8 +69,14 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                     children: <Widget>[
                       ElevatedButton(
                         onPressed: continued,
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                            AppColors.activeColor,
+                          ),
+                        ),
                         child: Text(
-                          'NEXT',
+                          _currentIndex == 2 ? "SUBMIT" : "NEXT",
+                          // continued() == true ? "NEXT":"SUBMIT" ,
                           style: TextStyle(color: AppColors.whiteColor),
                         ),
                       ),
@@ -169,7 +175,7 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                   //**** Education Section
                   Step(
                     title: Text(
-                      "Education",
+                      "Educ & SKills",
                       style: TextStyle(color: AppColors.whiteColor),
                     ),
                     content: Column(
@@ -211,7 +217,15 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                                     textInputType: TextInputType.datetime,
                                     helperText: "To"))
                           ],
-                        )
+                        ),
+                        CustomTextField.customTextField(
+                            textEditingController: toController,
+                            textInputType: TextInputType.datetime,
+                            helperText: "Skills"),
+                        CustomTextField.customTextField(
+                            textEditingController: toController,
+                            textInputType: TextInputType.datetime,
+                            helperText: "CV")
                       ],
                     ),
                     isActive: _currentIndex >= 0,
@@ -219,32 +233,32 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                         ? StepState.complete
                         : StepState.disabled,
                   ),
-                  //  **** Key Skills And Language
-                  Step(
-                    title: Text(
-                      "Skill",
-                      style: TextStyle(color: AppColors.whiteColor),
-                    ),
-                    content: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          "Skill And Language",
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                              fontSize: 25.sp, color: AppColors.whiteColor),
-                        ),
-                        CustomTextField.customTextField(
-                            textEditingController: userBio,
-                            textInputType: TextInputType.text,
-                            helperText: "Skills"),
-                      ],
-                    ),
-                    isActive: _currentIndex >= 0,
-                    state: _currentIndex >= 4
-                        ? StepState.complete
-                        : StepState.disabled,
-                  ),
+                  //   //  **** Key Skills And Language
+                  //   Step(
+                  //     title: Text(
+                  //       "Skill",
+                  //       style: TextStyle(color: AppColors.whiteColor),
+                  //     ),
+                  //     content: Column(
+                  //       crossAxisAlignment: CrossAxisAlignment.start,
+                  //       children: <Widget>[
+                  //         Text(
+                  //           "Skill And Language",
+                  //           textAlign: TextAlign.start,
+                  //           style: TextStyle(
+                  //               fontSize: 25.sp, color: AppColors.whiteColor),
+                  //         ),
+                  //         CustomTextField.customTextField(
+                  //             textEditingController: userBio,
+                  //             textInputType: TextInputType.text,
+                  //             helperText: "Skills"),
+                  //       ],
+                  //     ),
+                  //     isActive: _currentIndex >= 0,
+                  //     state: _currentIndex >= 4
+                  //         ? StepState.complete
+                  //         : StepState.disabled,
+                  //   ),
                 ],
               ),
             ),
@@ -267,7 +281,7 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
   }
 
   continued() {
-    _currentIndex < 3 ? setState(() => _currentIndex += 1) : null;
+    _currentIndex < 2 ? setState(() => _currentIndex += 1) : null;
   }
 
   cancel() {
