@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
+import 'package:inductus_jobs/view/jobDetaileSacreen/job.details.screen.dart';
 
 import '../Widgets/drawer.widget.dart';
 
@@ -50,60 +51,68 @@ class HomeScreen extends StatelessWidget {
                 child: ListView.builder(
                     itemCount: 20,
                     itemBuilder: (context, index) {
-                      return Card(
-                        color: AppColors.cardColor,
-                        child: ListTile(
-                          title: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Text(
-                                "Flutter Developer",
-                                style: GoogleFonts.aBeeZee(
-                                    textStyle:
-                                        TextStyle(color: AppColors.whiteColor)),
-                              ),
-                              Text(
-                                "Rs 3 - 4LPA",
-                                style: GoogleFonts.aBeeZee(
-                                    textStyle:
-                                        TextStyle(color: AppColors.whiteColor)),
-                              )
-                            ],
-                          ),
-                          subtitle: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Text(
-                                    "1-2 Years",
-                                    style: GoogleFonts.aBeeZee(
-                                        textStyle: TextStyle(
-                                            color: AppColors.whiteColor)),
-                                  ),
-                                  Text(
-                                    "Graduation/Diploma",
-                                    style: GoogleFonts.aBeeZee(
-                                        textStyle: TextStyle(
-                                            color: AppColors.whiteColor)),
-                                  ),
-                                  IconButton(
-                                      onPressed: () {},
-                                      icon: FaIcon(
-                                        FontAwesomeIcons.star,
-                                        color: AppColors.whiteColor,
-                                      ))
-                                ],
-                              ),
-                              Text(
-                                "Inductus Limited",
-                                style: GoogleFonts.aBeeZee(
-                                    textStyle:
-                                        TextStyle(color: AppColors.whiteColor)),
-                              ),
-                            ],
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => JobDetailScreen()));
+                        },
+                        child: Card(
+                          color: AppColors.cardColor,
+                          child: ListTile(
+                            title: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text(
+                                  "Flutter Developer",
+                                  style: GoogleFonts.aBeeZee(
+                                      textStyle: TextStyle(
+                                          color: AppColors.whiteColor)),
+                                ),
+                                Text(
+                                  "Rs 3 - 4LPA",
+                                  style: GoogleFonts.aBeeZee(
+                                      textStyle: TextStyle(
+                                          color: AppColors.whiteColor)),
+                                )
+                              ],
+                            ),
+                            subtitle: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Text(
+                                      "1-2 Years",
+                                      style: GoogleFonts.aBeeZee(
+                                          textStyle: TextStyle(
+                                              color: AppColors.whiteColor)),
+                                    ),
+                                    Text(
+                                      "Graduation/Diploma",
+                                      style: GoogleFonts.aBeeZee(
+                                          textStyle: TextStyle(
+                                              color: AppColors.whiteColor)),
+                                    ),
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: FaIcon(
+                                          FontAwesomeIcons.star,
+                                          color: AppColors.whiteColor,
+                                        ))
+                                  ],
+                                ),
+                                Text(
+                                  "Inductus Limited",
+                                  style: GoogleFonts.aBeeZee(
+                                      textStyle: TextStyle(
+                                          color: AppColors.whiteColor)),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       );

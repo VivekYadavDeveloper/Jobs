@@ -35,13 +35,7 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
       //   child: const FaIcon(FontAwesomeIcons.arrowRight),
       // ),
       appBar: AppBar(
-        // leading: Center(
-        //   child: InkWell(
-        //       onTap: () {
-        //         Navigator.pop(context);
-        //       },
-        //       child: FaIcon(FontAwesomeIcons.arrowLeft)),
-        // ),
+
         backgroundColor: AppColors.primaryColor,
         title: Text(
           "Edit Profile",
@@ -75,7 +69,7 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                           ),
                         ),
                         child: Text(
-                          _currentIndex == 2 ? "SUBMIT" : "NEXT",
+                          _currentIndex == 2 ? "DONE" : "NEXT",
                           // continued() == true ? "NEXT":"SUBMIT" ,
                           style: TextStyle(color: AppColors.whiteColor),
                         ),
@@ -107,9 +101,9 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          "Basic Info",
+                          "BASIC INFO",
                           style: TextStyle(
-                              fontSize: 25.sp, color: AppColors.whiteColor),
+                              fontSize: 20.sp, color: AppColors.whiteColor),
                         ),
                         CustomTextField.customTextField(
                           helperText: "Full Name",
@@ -156,36 +150,24 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          "Bio",
+                          "BIO",
                           textAlign: TextAlign.start,
                           style: TextStyle(
-                              fontSize: 25.sp, color: AppColors.whiteColor),
+                              fontSize: 20.sp, color: AppColors.whiteColor),
                         ),
                         CustomTextField.customTextField(
                             textEditingController: userBio,
                             textInputType: TextInputType.text,
                             helperText: "Bio (Max 500 Word)"),
-                      ],
-                    ),
-                    isActive: _currentIndex >= 0,
-                    state: _currentIndex >= 2
-                        ? StepState.complete
-                        : StepState.disabled,
-                  ),
-                  //**** Education Section
-                  Step(
-                    title: Text(
-                      "Educ & SKills",
-                      style: TextStyle(color: AppColors.whiteColor),
-                    ),
-                    content: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
+                        SizedBox(height: 10.h),
+
+                        //**** Education Section ****//
                         Text(
-                          "Education",
+                          "EDUCATION",
                           style: TextStyle(
-                              fontSize: 25.sp, color: AppColors.whiteColor),
+                              fontSize: 20.sp, color: AppColors.whiteColor),
                         ),
+                        SizedBox(height: 10.h),
                         CustomTextField.customTextField(
                             textEditingController: userQualification,
                             textInputType: TextInputType.text,
@@ -218,14 +200,53 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                                     helperText: "To"))
                           ],
                         ),
+                      ],
+                    ),
+                    isActive: _currentIndex >= 0,
+                    state: _currentIndex >= 2
+                        ? StepState.complete
+                        : StepState.disabled,
+                  ),
+                  //**** Contact Section *****//
+                  Step(
+                    title: Text(
+                      "Contact",
+                      style: TextStyle(color: AppColors.whiteColor),
+                    ),
+                    content: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "CONTACT",
+                          style: TextStyle(
+                              fontSize: 20.sp, color: AppColors.whiteColor),
+                        ),
+                        SizedBox(height: 10.h),
                         CustomTextField.customTextField(
-                            textEditingController: toController,
-                            textInputType: TextInputType.datetime,
-                            helperText: "Skills"),
+                            textEditingController: userQualification,
+                            textInputType: TextInputType.phone,
+                            helperText: "Mobile No"),
+                        SizedBox(height: 10.h),
                         CustomTextField.customTextField(
-                            textEditingController: toController,
-                            textInputType: TextInputType.datetime,
-                            helperText: "CV")
+                            textEditingController: userQualification,
+                            textInputType: TextInputType.emailAddress,
+                            helperText: "Email"),
+                        SizedBox(height: 10.h),
+                        Container(
+                          height: 50.h,
+                          child: Center(
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text(
+                                  "SAVE PROFILE",
+                                  style: TextStyle(
+                                      fontSize: 15.sp,
+                                      color: AppColors.primaryColor),
+                                )),
+                          ),
+                        )
                       ],
                     ),
                     isActive: _currentIndex >= 0,
