@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:inductus_jobs/view/jobDetaileSacreen/job.apply.dart';
 
 import '../../app/app.color.constant.dart';
 
@@ -37,6 +37,11 @@ class _JobDetailScreenState extends State<JobDetailScreen> {
                     height: 300.h,
                     width: 400.w,
                     decoration: BoxDecoration(
+                      border: Border.all(
+                        color: AppColors.activeColor,
+                        style: BorderStyle.solid,
+                        width: 1.0,
+                      ),
                       color: AppColors.textFieldFillColor,
                       borderRadius: const BorderRadius.all(Radius.circular(12)),
                     ),
@@ -107,6 +112,7 @@ class _JobDetailScreenState extends State<JobDetailScreen> {
                                 width: 100,
                                 decoration: BoxDecoration(
                                     color: AppColors.activeColor,
+                                    // border: B,
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(12))),
                                 child: Center(
@@ -154,7 +160,12 @@ class _JobDetailScreenState extends State<JobDetailScreen> {
                       style: ButtonStyle(
                           backgroundColor: MaterialStatePropertyAll<Color>(
                               AppColors.activeColor)),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => JobApplyScreen()));
+                      },
                       child: Text(
                         "Apply",
                         style: TextStyle(
