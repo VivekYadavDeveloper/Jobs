@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
+import 'package:inductus_jobs/app/routes/app.routes.dart';
 import 'package:inductus_jobs/view/bottomNavigationBar/bottom.navigationbar.dart';
 import 'package:inductus_jobs/view/forgotPasswordScreen/forgot.password.screen.dart';
 import 'package:inductus_jobs/view/loginScreen/login.screen.dart';
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
               fontFamily: GoogleFonts.poppins().fontFamily,
               useMaterial3: true,
             ),
-            home: NavigationBarScreen(),
+            onGenerateRoute: AppRoutes.generateRoute,
+            initialRoute: AppRoutes.splashRoute,
           );
         });
   }
