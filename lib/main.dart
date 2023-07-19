@@ -4,14 +4,8 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
 import 'package:inductus_jobs/app/routes/app.routes.dart';
-import 'package:inductus_jobs/view/bottomNavigationBar/bottom.navigationbar.dart';
-import 'package:inductus_jobs/view/forgotPasswordScreen/forgot.password.screen.dart';
-import 'package:inductus_jobs/view/loginScreen/login.screen.dart';
-import 'package:inductus_jobs/view/otpVerificationScreen/otp.verification.screen.dart';
-import 'package:inductus_jobs/view/profileScreen/profile.screen.dart';
-import 'package:inductus_jobs/view/registrationScreen/resgistration.screen.dart';
+
 import 'app/constant.dart';
-import 'view/homeScreen/homeScreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

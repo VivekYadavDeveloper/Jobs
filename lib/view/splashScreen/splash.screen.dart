@@ -16,22 +16,25 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 6), () {
       Navigator.pushReplacementNamed(context, AppRoutes.loginRoute);
     });
   }
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primaryColor,
+      backgroundColor: AppColors.whiteColor,
       body: LayoutBuilder(builder: (context, BoxConstraints constraints) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Image.asset(
-              "assets/images/logo.png",
-              width: 100.w,
-              height: 100.h,
+            Center(
+              child: Image.asset(
+                "assets/images/logo.png",
+                width: 100.w,
+                height: 100.h,
+              ),
             )
           ],
         );
