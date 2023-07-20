@@ -5,6 +5,8 @@ import 'package:inductus_jobs/app/app.color.constant.dart';
 import 'package:inductus_jobs/view/Widgets/custom.textfield.widget.dart';
 import 'package:inductus_jobs/view/loginScreen/Widgets/login.screen.widget.dart';
 
+import '../../app/routes/app.routes.dart';
+
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
 
@@ -69,7 +71,10 @@ class LoginScreen extends StatelessWidget {
                                     backgroundColor:
                                         MaterialStateProperty.all<Color>(
                                             AppColors.activeColor)),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamedAndRemoveUntil(context,
+                                      AppRoutes.navigationBarRoute, (route) => false);
+                                },
                                 child: Text(
                                   "LOGIN",
                                   style: GoogleFonts.roboto(

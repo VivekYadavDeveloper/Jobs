@@ -41,28 +41,33 @@ class JobApplyScreen extends StatelessWidget {
                     textInputType: TextInputType.text,
                     helperText: "Email"),
                 SizedBox(height: 10.h),
-                Container(
-                  height: 50.h,
-                  width: 250.0.w,
-                  decoration: BoxDecoration(
-                    color: AppColors.activeColor,
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          "Upload Your CV",
-                          style: TextStyle(
-                              fontSize: 15.sp, fontWeight: FontWeight.bold),
-                        ),
-                        FaIcon(
-                          FontAwesomeIcons.filePdf,
-                          color: AppColors.primaryColor,
-                        ),
-                      ],
+                GestureDetector(
+                  onTap: () {
+                    print("PDF Select");
+                  },
+                  child: Container(
+                    height: 50.h,
+                    width: 350.0.w,
+                    decoration: BoxDecoration(
+                      color: AppColors.activeColor,
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            "Upload Your CV",
+                            style: TextStyle(
+                                fontSize: 15.sp, fontWeight: FontWeight.bold),
+                          ),
+                          FaIcon(
+                            FontAwesomeIcons.filePdf,
+                            color: AppColors.primaryColor,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -87,17 +92,18 @@ class JobApplyScreen extends StatelessWidget {
                         horizontal: 30,
                         vertical: 20,
                       ),
-                      helperStyle:
-                          TextStyle(color: AppColors.whiteColor, fontSize: 15.sp),
+                      helperStyle: TextStyle(
+                          color: AppColors.whiteColor, fontSize: 15.sp),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: const BorderRadius.all(
                           Radius.circular(12),
                         ),
-                        borderSide:
-                            BorderSide(color: AppColors.activeColor, width: 1.5),
+                        borderSide: BorderSide(
+                            color: AppColors.activeColor, width: 1.5),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(Radius.circular(8)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(8)),
                         borderSide: BorderSide(color: AppColors.activeColor),
                       ),
                     ),

@@ -43,10 +43,10 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
               icon: FaIcon(FontAwesomeIcons.bookmark),
               label: 'Save',
             ),
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.message),
-              label: 'Chat',
-            ),
+            // BottomNavigationBarItem(
+            //   icon: FaIcon(FontAwesomeIcons.message),
+            //   label: 'Chat',
+            // ),
             BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.gear),
               label: 'Setting',

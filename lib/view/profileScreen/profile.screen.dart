@@ -215,6 +215,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
+                Card(
+                  color: AppColors.primaryColor,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Flutter , Jetpack Compose , Android Studio , Postman",
+                      style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                              fontSize: 16.sp, color: AppColors.whiteColor)),
+                    ),
+                  ),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height / 35.h),
                 // Expanded(
                 //   child: ListView.builder(
                 //       itemCount: 5,
