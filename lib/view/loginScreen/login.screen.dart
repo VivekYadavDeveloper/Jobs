@@ -63,6 +63,18 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                           SizedBox(height: 10.h),
+                          TextButton(
+                              onPressed: () {
+                                Navigator.pushNamedAndRemoveUntil(context,
+                                    AppRoutes.forgotRoute, (route) => false);
+                              },
+                              child: Text(
+                                "Forgot Password",
+                                style: TextStyle(
+                                    color: AppColors.whiteColor,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                          SizedBox(height: 10.h),
                           SizedBox(
                             height: 40.h,
                             width: 150.w,
@@ -72,8 +84,10 @@ class LoginScreen extends StatelessWidget {
                                         MaterialStateProperty.all<Color>(
                                             AppColors.activeColor)),
                                 onPressed: () {
-                                  Navigator.pushNamedAndRemoveUntil(context,
-                                      AppRoutes.navigationBarRoute, (route) => false);
+                                  Navigator.pushNamedAndRemoveUntil(
+                                      context,
+                                      AppRoutes.navigationBarRoute,
+                                      (route) => false);
                                 },
                                 child: Text(
                                   "LOGIN",

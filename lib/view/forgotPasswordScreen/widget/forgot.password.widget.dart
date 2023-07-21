@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
+import 'package:inductus_jobs/app/routes/app.routes.dart';
 import 'package:inductus_jobs/view/Widgets/custom.back.btn.dart';
 
 Widget forgotPasswordTextWidget() {
@@ -8,16 +9,16 @@ Widget forgotPasswordTextWidget() {
     crossAxisAlignment: CrossAxisAlignment.start,
     mainAxisAlignment: MainAxisAlignment.center,
     children: <Widget>[
-      const CustomBackButton(route: "route"),
+      CustomBackButton(route: "/loginScreen"),
       Padding(
         padding: const EdgeInsets.fromLTRB(35.0, 10.0, 35.0, 2.0),
         child: RichText(
           text: TextSpan(
-            text: 'Hey Forgot Your Password ! 😲 ',
+            text: 'Hey Forgot Your Password!😲 ',
             style: TextStyle(
               color: AppColors.whiteColor,
               fontWeight: FontWeight.w900,
-              fontSize: 35.0.sp,
+              fontSize: 30.0.sp,
             ),
           ),
         ),

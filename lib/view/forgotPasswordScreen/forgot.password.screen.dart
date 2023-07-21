@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
+import 'package:inductus_jobs/app/routes/app.routes.dart';
 import 'package:inductus_jobs/view/Widgets/custom.textfield.widget.dart';
 import 'package:inductus_jobs/view/forgotPasswordScreen/widget/forgot.password.widget.dart';
 
@@ -58,7 +59,10 @@ class ForgotPasswordScreen extends StatelessWidget {
                                 backgroundColor:
                                     MaterialStateProperty.all<Color>(
                                         AppColors.activeColor)),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamedAndRemoveUntil(context,
+                                  AppRoutes.otpRoute, (route) => false);
+                            },
                             child: Text(
                               "SUBMIT",
                               style: GoogleFonts.roboto(

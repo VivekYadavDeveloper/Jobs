@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:inductus_jobs/app/app.color.constant.dart';
 
 Widget otpVerificationTextWidget() {
   return Column(
@@ -10,7 +11,7 @@ Widget otpVerificationTextWidget() {
         text: TextSpan(
           text: 'Enter Your OTP ',
           style: TextStyle(
-            color: Colors.black54,
+            color: AppColors.whiteColor,
             fontWeight: FontWeight.bold,
             fontSize: 28.0.sp,
           ),

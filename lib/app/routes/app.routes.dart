@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:inductus_jobs/view/forgotPasswordScreen/forgot.password.screen.dart';
 import 'package:inductus_jobs/view/loginScreen/login.screen.dart';
+import 'package:inductus_jobs/view/otpVerificationScreen/otp.verification.screen.dart';
 import 'package:inductus_jobs/view/registrationScreen/resgistration.screen.dart';
 import 'package:inductus_jobs/view/splashScreen/splash.screen.dart';
 
@@ -33,14 +35,18 @@ class AppRoutes {
         {
           return MaterialPageRoute(builder: (_) => RegistrationScreen());
         }
+      case forgotRoute:
+        {
+          return MaterialPageRoute(builder: (_) => ForgotPasswordScreen());
+        }
+      case otpRoute:
+        {
+          return MaterialPageRoute(builder: (_) => OtpVerificationScreen());
+        }
       case navigationBarRoute:
         {
           return MaterialPageRoute(builder: (_) => NavigationBarScreen());
         }
-      // case homeRoute:
-      //   {
-      //     return MaterialPageRoute(builder: (_) => HomeScreen());
-      //   }
     }
   }
 }

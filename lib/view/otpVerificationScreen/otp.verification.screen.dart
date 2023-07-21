@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:inductus_jobs/app/app.color.constant.dart';
+import 'package:inductus_jobs/app/routes/app.routes.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_field_style.dart';
 import 'package:otp_text_field/style.dart';
@@ -31,7 +33,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.primaryColor,
       resizeToAvoidBottomInset: false,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -47,16 +49,15 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
               length: 4,
               otpFieldStyle: OtpFieldStyle(
                   backgroundColor: Colors.transparent,
-                  borderColor: Colors.black,
-                  enabledBorderColor: Colors.black),
+                  borderColor: AppColors.textFieldFillColor,
+                  enabledBorderColor: AppColors.activeColor),
               width: MediaQuery.of(context).size.width / 1.5,
               textFieldAlignment: MainAxisAlignment.spaceAround,
               spaceBetween: 10,
               fieldWidth: 50.w,
               fieldStyle: FieldStyle.box,
               outlineBorderRadius: 15.r,
-              style:
-                  TextStyle(fontSize: 17.sp, color: Colors.blueGrey.shade700),
+              style: TextStyle(fontSize: 17.sp, color: AppColors.whiteColor),
               onChanged: (pin) {
                 otp = pin;
               },
@@ -67,7 +68,26 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
           ),
           SizedBox(height: 25.h),
           Center(
-            child: ElevatedButton(onPressed: (){}, child: const Text("SUBMIT"))
+            child: SizedBox(
+              height: 50.h,
+              width: 150.w,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        AppColors.activeColor)),
+                onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, AppRoutes.loginRoute, (route) => false);
+                },
+                child: Text(
+                  "SUBMIT",
+                  style: TextStyle(
+                      color: AppColors.whiteColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15),
+                ),
+              ),
+            ),
           ),
         ],
       ),
