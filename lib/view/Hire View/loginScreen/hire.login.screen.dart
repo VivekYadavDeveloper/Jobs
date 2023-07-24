@@ -5,13 +5,14 @@ import 'package:inductus_jobs/app/app.color.constant.dart';
 import 'package:inductus_jobs/view/Widgets/custom.textfield.widget.dart';
 import 'package:inductus_jobs/view/loginScreen/Widgets/login.screen.widget.dart';
 
-import '../../app/routes/app.routes.dart';
+import '../../../app/routes/app.routes.dart';
+import '../../Widgets/custom.back.btn.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+class HireLoginScreen extends StatelessWidget {
+  HireLoginScreen({super.key});
 
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController hireemailController = TextEditingController();
+  final TextEditingController hirepasswordController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 
@@ -19,6 +20,9 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
+      appBar: AppBar(
+        leading: const CustomBackButton(route: '/loginScreen'),
+      ),
       resizeToAvoidBottomInset: false,
       body: LayoutBuilder(
         builder: (context, BoxConstraints constraints) {
@@ -41,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                             padding:
                                 const EdgeInsets.fromLTRB(35.0, 0.0, 35.0, 2.0),
                             child: CustomTextField.customTextField(
-                              textEditingController: emailController,
+                              textEditingController: hireemailController,
                               textInputType: TextInputType.text,
                               helperText: "Email",
                               validator: (val) =>
@@ -56,7 +60,7 @@ class LoginScreen extends StatelessWidget {
                             padding:
                                 const EdgeInsets.fromLTRB(35.0, 0.0, 35.0, 2.0),
                             child: CustomTextField.customTextField(
-                              textEditingController: passwordController,
+                              textEditingController: hirepasswordController,
                               textInputType: TextInputType.text,
                               helperText: "Password",
                               validator: (val) =>
@@ -100,20 +104,17 @@ class LoginScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(height: 10.h),
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pushNamedAndRemoveUntil(context,
-                                  AppRoutes.hireLoginRoute, (route) => false);
-                            },
-                            child: Text(
-                              "Let's Hired !",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15.sp,
-                                  color: AppColors.activeColor),
-                            ),
-                          ),
+                          // SizedBox(height: 10.h),
+                          // TextButton(
+                          //   onPressed: () {},
+                          //   child: Text(
+                          //     "Let's Hired !",
+                          //     style: TextStyle(
+                          //         fontWeight: FontWeight.bold,
+                          //         fontSize: 15.sp,
+                          //         color: AppColors.activeColor),
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),

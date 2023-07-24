@@ -9,7 +9,9 @@ class CustomBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).pushNamed(route);
+      },
       icon: const FaIcon(FontAwesomeIcons.chevronLeft),
     );
   }
