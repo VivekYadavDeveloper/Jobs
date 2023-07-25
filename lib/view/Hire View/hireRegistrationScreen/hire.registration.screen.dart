@@ -2,26 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
+import 'package:inductus_jobs/view/Hire%20View/hireRegistrationScreen/widget/hire.registration.welcome.text.dart';
 
-import '../Widgets/custom.back.btn.dart';
-import '../Widgets/custom.textfield.widget.dart';
-import 'widgets/welcome.text.resgistration.widget.dart';
+import '../../Widgets/custom.back.btn.dart';
+import '../../Widgets/custom.textfield.widget.dart';
 
-class RegistrationScreen extends StatefulWidget {
-  const RegistrationScreen({super.key});
+class HireRegistrationScreen extends StatefulWidget {
+  const HireRegistrationScreen({super.key});
 
   @override
-  State<RegistrationScreen> createState() => _RegistrationScreenState();
+  State<HireRegistrationScreen> createState() => _HireRegistrationScreenState();
 }
 
-class _RegistrationScreenState extends State<RegistrationScreen> {
-  final TextEditingController userEmailController = TextEditingController();
+class _HireRegistrationScreenState extends State<HireRegistrationScreen> {
+  final TextEditingController hireUserEmailController = TextEditingController();
 
-  final TextEditingController userNameController = TextEditingController();
+  final TextEditingController hireUserNameController = TextEditingController();
 
-  final TextEditingController phoneNumberController = TextEditingController();
+  final TextEditingController hirePhoneNumberController =
+      TextEditingController();
 
-  final TextEditingController userPassController = TextEditingController();
+  final TextEditingController hireUserPassController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 
@@ -38,8 +39,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                const CustomBackButton(route: "/loginScreen"),
-                welcomeTextRegistration(),
+                const CustomBackButton(route: "/hireLoginScreen"),
+                hireWelcomeTextRegistration(),
                 Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +54,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               padding: const EdgeInsets.fromLTRB(
                                   35.0, 10.0, 35.0, 2.0),
                               child: CustomTextField.customTextField(
-                                  textEditingController: userNameController,
+                                  textEditingController: hireUserNameController,
                                   helperText: 'Enter User Name',
                                   validator: (val) =>
                                       val!.isEmpty ? 'Enter an Username' : null,
@@ -63,7 +64,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               padding: const EdgeInsets.fromLTRB(
                                   35.0, 10.0, 35.0, 2.0),
                               child: CustomTextField.customTextField(
-                                  textEditingController: userEmailController,
+                                  textEditingController:
+                                      hireUserEmailController,
                                   helperText: 'User Email',
                                   validator: (val) =>
                                       !RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
@@ -76,7 +78,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               padding: const EdgeInsets.fromLTRB(
                                   35.0, 10.0, 35.0, 2.0),
                               child: CustomTextField.customTextField(
-                                  textEditingController: phoneNumberController,
+                                  textEditingController:
+                                      hirePhoneNumberController,
                                   helperText: 'Enter Phone Number',
                                   textInputType: TextInputType.phone,
                                   validator: (value) {
@@ -95,7 +98,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               padding: const EdgeInsets.fromLTRB(
                                   35.0, 10.0, 35.0, 2.0),
                               child: CustomTextField.customTextField(
-                                  textEditingController: userPassController,
+                                  textEditingController: hireUserPassController,
                                   helperText: 'Enter Password',
                                   validator: (val) => val!.isEmpty
                                       ? 'Please Fill Password'
@@ -106,7 +109,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               padding: const EdgeInsets.fromLTRB(
                                   35.0, 10.0, 35.0, 2.0),
                               child: CustomTextField.customTextField(
-                                  textEditingController: userPassController,
+                                  textEditingController: hireUserPassController,
                                   helperText: 'Confirm Password',
                                   validator: (val) => val!.isEmpty
                                       ? 'Please Fill Confirm Password'

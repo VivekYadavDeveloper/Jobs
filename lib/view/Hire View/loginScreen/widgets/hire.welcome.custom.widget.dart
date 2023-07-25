@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
 
-Widget welcomeTextLogin() {
+Widget hireWelcomeTextLogin() {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.center,
@@ -11,7 +11,7 @@ Widget welcomeTextLogin() {
       Padding(
         padding: const EdgeInsets.fromLTRB(35.0, 0.0, 35.0, 2.0),
         child: Center(
-          child: Text("Let's Hired...",
+          child: Text("Let's Hire...",
               textAlign: TextAlign.center,
               style: GoogleFonts.solitreo(
                 textStyle: TextStyle(

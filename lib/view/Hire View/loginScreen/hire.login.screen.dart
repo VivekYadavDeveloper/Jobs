@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
+import 'package:inductus_jobs/view/Hire%20View/loginScreen/widgets/hire.welcome.custom.widget.dart';
 import 'package:inductus_jobs/view/Widgets/custom.textfield.widget.dart';
 import 'package:inductus_jobs/view/loginScreen/Widgets/login.screen.widget.dart';
 
@@ -30,7 +31,7 @@ class HireLoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              welcomeTextLogin(),
+              hireWelcomeTextLogin(),
               SizedBox(height: 20.h),
               Center(
                 child: Column(
@@ -80,6 +81,20 @@ class HireLoginScreen extends StatelessWidget {
                                     fontWeight: FontWeight.bold),
                               )),
                           SizedBox(height: 10.h),
+
+                          TextButton(
+                              onPressed: () {
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context,
+                                    AppRoutes.hireRegistrationRoute,
+                                    (route) => false);
+                              },
+                              child: Text(
+                                "Register Here !",
+                                style: TextStyle(
+                                    color: AppColors.activeColor,
+                                    fontWeight: FontWeight.bold),
+                              )),
                           SizedBox(
                             height: 40.h,
                             width: 150.w,
@@ -91,12 +106,12 @@ class HireLoginScreen extends StatelessWidget {
                               onPressed: () {
                                 Navigator.pushNamedAndRemoveUntil(
                                     context,
-                                    AppRoutes.navigationBarRoute,
+                                    "AppRoutes.navigationBarRoute",
                                     (route) => false);
                               },
                               child: Text(
                                 "LOGIN",
-                                style: GoogleFonts.roboto(
+                                style: GoogleFonts.poppins(
                                     textStyle: TextStyle(
                                         fontSize: 15.sp,
                                         color: AppColors.whiteColor,
