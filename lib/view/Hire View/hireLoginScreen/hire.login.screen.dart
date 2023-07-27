@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
-import 'package:inductus_jobs/view/Hire%20View/loginScreen/widgets/hire.welcome.custom.widget.dart';
+import 'package:inductus_jobs/view/Hire%20View/hireLoginScreen/widgets/hire.welcome.custom.widget.dart';
+
 import 'package:inductus_jobs/view/Widgets/custom.textfield.widget.dart';
 import 'package:inductus_jobs/view/loginScreen/Widgets/login.screen.widget.dart';
 
@@ -69,18 +70,25 @@ class HireLoginScreen extends StatelessWidget {
                             ),
                           ),
                           SizedBox(height: 10.h),
-                          TextButton(
-                              onPressed: () {
-                                Navigator.pushNamedAndRemoveUntil(context,
-                                    AppRoutes.forgotRoute, (route) => false);
-                              },
-                              child: Text(
-                                "Forgot Password",
-                                style: TextStyle(
-                                    color: AppColors.whiteColor,
-                                    fontWeight: FontWeight.bold),
-                              )),
                           SizedBox(height: 10.h),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: <Widget>[
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamedAndRemoveUntil(
+                                        context,
+                                        AppRoutes.hireForgotPassRoute,
+                                            (route) => false);
+                                  },
+                                  child: Text(
+                                    "Forgot Password",
+                                    style: TextStyle(
+                                        color: AppColors.whiteColor,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                            ],
+                          ),
 
                           TextButton(
                               onPressed: () {

@@ -4,17 +4,17 @@ import 'package:inductus_jobs/app/app.color.constant.dart';
 import 'package:inductus_jobs/app/routes/app.routes.dart';
 import 'package:inductus_jobs/view/Widgets/custom.back.btn.dart';
 
-Widget forgotPasswordTextWidget() {
+Widget hireForgotPasswordTextWidget() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     mainAxisAlignment: MainAxisAlignment.center,
     children: <Widget>[
-      const CustomBackButton(route: "/loginScreen"),
+      const CustomBackButton(route: "/hireLoginScreen"),
       Padding(
         padding: const EdgeInsets.fromLTRB(35.0, 10.0, 35.0, 2.0),
         child: RichText(
           text: TextSpan(
-            text: 'Hey Forgot Your Password!😲 ',
+            text: 'Hey Recruiter Forgot Your Password!😲 ',
             style: TextStyle(
               color: AppColors.whiteColor,
               fontWeight: FontWeight.w900,

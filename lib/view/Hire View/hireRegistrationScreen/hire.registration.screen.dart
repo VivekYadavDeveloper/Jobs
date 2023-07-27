@@ -124,6 +124,7 @@ class _HireRegistrationScreenState extends State<HireRegistrationScreen> {
                             ],
                           ),
                         ),
+
                         /** Checkbox Widget **/
                         Row(children: <Widget>[
                           Checkbox(

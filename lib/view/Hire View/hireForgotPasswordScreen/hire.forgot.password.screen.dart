@@ -4,10 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
 import 'package:inductus_jobs/app/routes/app.routes.dart';
 import 'package:inductus_jobs/view/Widgets/custom.textfield.widget.dart';
-import 'package:inductus_jobs/view/forgotPasswordScreen/widget/forgot.password.widget.dart';
 
-class ForgotPasswordScreen extends StatelessWidget {
-  ForgotPasswordScreen({super.key});
+import 'widget/hire.forgotpassword.welcome.widget.dart';
+
+class HireForgotPasswordScreen extends StatelessWidget {
+  HireForgotPasswordScreen({super.key});
 
   final TextEditingController userForgotPassEmailController =
       TextEditingController();
@@ -25,7 +26,7 @@ class ForgotPasswordScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            forgotPasswordTextWidget(),
+            hireForgotPasswordTextWidget(),
             SizedBox(height: 10.h),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -61,7 +62,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                                         AppColors.activeColor)),
                             onPressed: () {
                               Navigator.pushNamedAndRemoveUntil(context,
-                                  AppRoutes.otpRoute, (route) => false);
+                                  AppRoutes.hireOtpRoute, (route) => false);
                             },
                             child: Text(
                               "SUBMIT",
