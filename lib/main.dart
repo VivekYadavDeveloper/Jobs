@@ -34,6 +34,7 @@ class MyApp extends StatelessWidget {
               primaryColor: AppColors.primaryColor,
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               fontFamily: GoogleFonts.poppins().fontFamily,
+              scaffoldBackgroundColor: AppColors.primaryColor,
               useMaterial3: true,
             ),
             onGenerateRoute: AppRoutes.generateRoute,

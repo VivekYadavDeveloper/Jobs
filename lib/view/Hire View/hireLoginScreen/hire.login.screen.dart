@@ -9,6 +9,8 @@ import 'package:inductus_jobs/view/loginScreen/Widgets/login.screen.widget.dart'
 
 import '../../../app/routes/app.routes.dart';
 import '../../Widgets/custom.back.btn.dart';
+import '../hireProfileScreen/hire.job.form.screen.dart';
+import '../hireProfileScreen/hire.job.form.screen.dart';
 
 class HireLoginScreen extends StatelessWidget {
   HireLoginScreen({super.key});
@@ -79,7 +81,7 @@ class HireLoginScreen extends StatelessWidget {
                                     Navigator.pushNamedAndRemoveUntil(
                                         context,
                                         AppRoutes.hireForgotPassRoute,
-                                            (route) => false);
+                                        (route) => false);
                                   },
                                   child: Text(
                                     "Forgot Password",
@@ -114,7 +116,7 @@ class HireLoginScreen extends StatelessWidget {
                               onPressed: () {
                                 Navigator.pushNamedAndRemoveUntil(
                                     context,
-                                    "AppRoutes.navigationBarRoute",
+                                    AppRoutes.hireJobPostFormRoute,
                                     (route) => false);
                               },
                               child: Text(

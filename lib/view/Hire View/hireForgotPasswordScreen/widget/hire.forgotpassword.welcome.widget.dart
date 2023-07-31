@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
-import 'package:inductus_jobs/app/routes/app.routes.dart';
 import 'package:inductus_jobs/view/Widgets/custom.back.btn.dart';
 
 Widget hireForgotPasswordTextWidget() {

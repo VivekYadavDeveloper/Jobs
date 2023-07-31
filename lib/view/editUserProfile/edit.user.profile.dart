@@ -35,7 +35,6 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
       //   child: const FaIcon(FontAwesomeIcons.arrowRight),
       // ),
       appBar: AppBar(
-
         backgroundColor: AppColors.primaryColor,
         title: Text(
           "Edit Profile",

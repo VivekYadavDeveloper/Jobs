@@ -11,6 +11,7 @@ import 'package:inductus_jobs/view/registrationScreen/resgistration.screen.dart'
 import 'package:inductus_jobs/view/splashScreen/splash.screen.dart';
 
 import '../../view/Hire View/hireLoginScreen/hire.login.screen.dart';
+import '../../view/Hire View/hireProfileScreen/hire.job.form.screen.dart';
 import '../../view/bottomNavigationBar/bottom.navigationbar.dart';
 import '../../view/homeScreen/homeScreen.dart';
 
@@ -32,6 +33,7 @@ class AppRoutes {
   static const String hireForgotPassRoute = "/hireForgotPassScreen";
   static const String hireOtpRoute = "/hireOtpVerificationScreen";
   static const String hireRegistrationRoute = "/hireRegistrationScreen";
+  static const String hireJobPostFormRoute = "/hireJobPostFormScreen";
 
   static Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -46,6 +48,10 @@ class AppRoutes {
       case hireLoginRoute:
         {
           return MaterialPageRoute(builder: (_) => HireLoginScreen());
+        }
+      case hireJobPostFormRoute:
+        {
+          return MaterialPageRoute(builder: (_) => HireJobFormScreen());
         }
 
       case hireRegistrationRoute:
