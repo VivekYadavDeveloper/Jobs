@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:inductus_jobs/view/Hire%20View/hireForgotPasswordScreen/hire.forgot.password.screen.dart';
 import 'package:inductus_jobs/view/Hire%20View/hireOtpScreen/hire.otp.screen.dart';
@@ -8,17 +7,17 @@ import 'package:inductus_jobs/view/forgotPasswordScreen/forgot.password.screen.d
 import 'package:inductus_jobs/view/loginScreen/login.screen.dart';
 import 'package:inductus_jobs/view/otpVerificationScreen/otp.verification.screen.dart';
 import 'package:inductus_jobs/view/registrationScreen/resgistration.screen.dart';
+import 'package:inductus_jobs/view/settingScreen/setting.screen.dart';
 import 'package:inductus_jobs/view/splashScreen/splash.screen.dart';
 
 import '../../view/Hire View/hireLoginScreen/hire.login.screen.dart';
 import '../../view/Hire View/hireProfileScreen/hire.job.form.screen.dart';
 import '../../view/bottomNavigationBar/bottom.navigationbar.dart';
-import '../../view/homeScreen/homeScreen.dart';
+import '../../view/settingScreen/notificationScreen/notification.screen.dart';
 
 class AppRoutes {
   static const String splashRoute = "/splashScreen";
   static const String loginRoute = "/loginScreen";
-
   static const String signUpRoute = "/signScreen";
   static const String forgotRoute = "/forgotPasswordScreen";
   static const String navigationBarRoute = "/navigationScreen";
@@ -27,6 +26,7 @@ class AppRoutes {
   static const String otpRoute = "/otpScreen";
   static const String detailRoute = "/detailScreen";
   static const String editProfileRoute = "/editProfileScreen";
+  static const String notificationRoute = "/notificationScreen";
 
   //** Recruiter Routing
   static const String hireLoginRoute = "/hireLoginScreen";
@@ -85,6 +85,10 @@ class AppRoutes {
       case navigationBarRoute:
         {
           return MaterialPageRoute(builder: (_) => const NavigationBarScreen());
+        }
+      case notificationRoute:
+        {
+          return MaterialPageRoute(builder: (_) => const NotificationScreen());
         }
     }
   }

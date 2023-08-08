@@ -57,6 +57,7 @@ class _EditUserProfileScreenState extends State<EditUserProfileScreen> {
                     ),
               ),
               child: Stepper(
+
                 controlsBuilder: (BuildContext context, _) {
                   return Row(
                     children: <Widget>[

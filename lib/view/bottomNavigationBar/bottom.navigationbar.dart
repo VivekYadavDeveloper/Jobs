@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
 import 'package:inductus_jobs/view/homeScreen/homeScreen.dart';
+import 'package:inductus_jobs/view/settingScreen/setting.screen.dart';
 
 class NavigationBarScreen extends StatefulWidget {
   const NavigationBarScreen({super.key});
@@ -16,8 +17,7 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
   static const List<Widget> _screens = <Widget>[
     HomeScreen(),
     HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
+    SettingScreen()
   ];
 
   void _onItemTapped(int index) {

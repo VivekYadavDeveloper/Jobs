@@ -29,7 +29,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             )),
         title: Text(
           "Profile",
-          style: GoogleFonts.roboto(
+          style: GoogleFonts.poppins(
               textStyle: TextStyle(color: AppColors.whiteColor)),
         ),
       ),
