@@ -17,67 +17,63 @@ class _SettingScreenState extends State<SettingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Setting",
-          style: GoogleFonts.poppins(
-              textStyle: TextStyle(color: AppColors.whiteColor)),
-        ),
+      body: SafeArea(
+        child: LayoutBuilder(builder: (context, BoxConstraints constraints) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 30.h),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, AppRoutes.notificationRoute, (route) => false);
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    FaIcon(
+                      FontAwesomeIcons.bell,
+                      size: 20.sp,
+                    ),
+                    SizedBox(width: 15.w),
+                    Text(
+                      "Notification",
+                      style: TextStyle(
+                        color: AppColors.whiteColor,
+                        fontSize: 18.sp,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20.h),
+              TextButton(
+                onPressed: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    FaIcon(
+                      FontAwesomeIcons.shieldHalved,
+                      size: 20.sp,
+                    ),
+                    SizedBox(width: 15.w),
+                    Text(
+                      "Privacy",
+                      style: TextStyle(
+                        color: AppColors.whiteColor,
+                        fontSize: 18.sp,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          );
+        }),
       ),
-      body: LayoutBuilder(builder: (context, BoxConstraints constraints) {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            TextButton(
-              onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context, AppRoutes.notificationRoute, (route) => false);
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  FaIcon(
-                    FontAwesomeIcons.bell,
-                    size: 20.sp,
-                  ),
-                  SizedBox(width: 15.w),
-                  Text(
-                    "Notification",
-                    style: TextStyle(
-                      color: AppColors.whiteColor,
-                      fontSize: 18.sp,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 20.h),
-            TextButton(
-              onPressed: () {},
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  FaIcon(
-                    FontAwesomeIcons.shieldHalved,
-                    size: 20.sp,
-                  ),
-                  SizedBox(width: 15.w),
-                  Text(
-                    "Privacy",
-                    style: TextStyle(
-                      color: AppColors.whiteColor,
-                      fontSize: 18.sp,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        );
-      }),
     );
   }
 }

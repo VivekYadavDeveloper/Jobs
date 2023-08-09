@@ -17,7 +17,7 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
   static const List<Widget> _screens = <Widget>[
     HomeScreen(),
     HomeScreen(),
-    SettingScreen()
+    SettingScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -43,10 +43,6 @@ class _NavigationBarScreenState extends State<NavigationBarScreen> {
               icon: FaIcon(FontAwesomeIcons.bookmark),
               label: 'Save',
             ),
-            // BottomNavigationBarItem(
-            //   icon: FaIcon(FontAwesomeIcons.message),
-            //   label: 'Chat',
-            // ),
             BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.gear),
               label: 'Setting',

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inductus_jobs/app/app.color.constant.dart';
@@ -146,7 +147,7 @@ class CustomSearchBar extends SearchDelegate {
             query = '';
           }
         },
-        icon: const FaIcon(FontAwesomeIcons.xmark));
+        icon: FaIcon(FontAwesomeIcons.xmark));
     return null;
   }
 
@@ -154,17 +155,26 @@ class CustomSearchBar extends SearchDelegate {
   Widget? buildLeading(BuildContext context) {
     IconButton(
         onPressed: () => close(context, null),
-        icon: const FaIcon(FontAwesomeIcons.arrowLeft));
+        icon: FaIcon(
+          FontAwesomeIcons.arrowLeft,
+          color: AppColors.activeColor,
+        ));
     return null;
   }
 
   @override
   Widget buildResults(BuildContext context) => Center(
-        child: Text(
-          query,
-          style: const TextStyle(
-            fontSize: 64,
-            fontWeight: FontWeight.bold,
+        child: Scaffold(
+          backgroundColor: AppColors.primaryColor,
+          body: Center(
+            child: Text(
+              query,
+              style: TextStyle(
+                fontSize: 64.sp,
+                color: AppColors.whiteColor,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ),
       );
@@ -176,17 +186,39 @@ class CustomSearchBar extends SearchDelegate {
       final input = query.toLowerCase();
       return result.contains(input);
     }).toList();
-    return ListView.builder(
-        itemCount: suggestion.length,
-        itemBuilder: (context, index) {
-          final suggestionCountry = suggestion[index];
-          return ListTile(
-            onTap: () {
-              query = suggestionCountry;
-              showResults(context);
-            },
-            title: Text(suggestionCountry),
-          );
-        });
+    return Scaffold(
+      backgroundColor: AppColors.primaryColor,
+      body: ListView.builder(
+          itemCount: suggestion.length,
+          itemBuilder: (context, index) {
+            final suggestionCountry = suggestion[index];
+            return ListTile(
+              onTap: () {
+                query = suggestionCountry;
+                showResults(context);
+              },
+              title: Text(
+                suggestionCountry,
+                style: TextStyle(color: AppColors.whiteColor),
+              ),
+            );
+          }),
+    );
+  }
+
+  @override
+  ThemeData appBarTheme(BuildContext context) {
+    return ThemeData(
+        textTheme:
+            TextTheme(titleMedium: TextStyle(color: AppColors.whiteColor)),
+        primaryIconTheme: IconThemeData(color: AppColors.activeColor),
+        colorScheme: ColorScheme.light(primary: AppColors.primaryColor),
+        inputDecorationTheme: InputDecorationTheme(
+            hintStyle: TextStyle(color: AppColors.whiteColor),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            filled: true,
+            fillColor: AppColors.cardColor));
   }
 }

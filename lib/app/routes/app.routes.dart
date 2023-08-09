@@ -27,6 +27,7 @@ class AppRoutes {
   static const String detailRoute = "/detailScreen";
   static const String editProfileRoute = "/editProfileScreen";
   static const String notificationRoute = "/notificationScreen";
+  static const String settingRoute = "/settingScreen";
 
   //** Recruiter Routing
   static const String hireLoginRoute = "/hireLoginScreen";
@@ -89,6 +90,10 @@ class AppRoutes {
       case notificationRoute:
         {
           return MaterialPageRoute(builder: (_) => const NotificationScreen());
+        }
+      case settingRoute:
+        {
+          return MaterialPageRoute(builder: (_) => const SettingScreen());
         }
     }
   }
